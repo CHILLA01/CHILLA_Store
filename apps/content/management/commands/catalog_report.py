@@ -34,7 +34,7 @@ class Command(BaseCommand):
 
             no_image = products.filter(image="").count()
 
-            self.stdout.write(self.style.SUCCESS(f"\n📦 {category.name}"))
+            self.stdout.write(self.style.SUCCESS(f"\n{category.name}"))
             self.stdout.write(f"  Products   : {stats['count']}")
             self.stdout.write(f"  Min price  : {stats['min_price'] or 0:.2f}")
             self.stdout.write(f"  Max price  : {stats['max_price'] or 0:.2f}")
