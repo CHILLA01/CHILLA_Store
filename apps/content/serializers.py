@@ -1,18 +1,10 @@
 from rest_framework import serializers
 from .models import Category, Model
 
-
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 'name', 'description', 'icon']
-
-
-class CategoryCreateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ['name', 'description', 'icon']
-
 
 class ModelReadSerializer(serializers.ModelSerializer):
     category = CategorySerializer(read_only=True)
@@ -31,5 +23,5 @@ class ModelWriteSerializer(serializers.ModelSerializer):
 
     def validate_price(self, value):
         if value <= 0:
-            raise serializers.ValidationError("Price must be greater than 0.")
+            raise serializers.ValidationError("Prie mst be overr 0.")
         return value
