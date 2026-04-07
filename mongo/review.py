@@ -15,7 +15,7 @@ sample_reviews = [
     {"product": "MacBook Pro", "category": "Laptops", "reviewer": "Maka", "rating": 4, "comment": "Solid build", "created_at": datetime.now()},
 ]
 
-connector.db[coll].delete_many({}) # Clear old data for a fresh start
+connector.db[coll].delete_many({})
 connector.insert_many(coll, sample_reviews)
 
 avg_pipeline = [
